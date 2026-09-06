@@ -1,0 +1,100 @@
+---
+// One vine path, reused in all four corners. CSS transforms (scaleX/scaleY)
+// mirror it into the other three corners, so the artwork only needs to be
+// drawn once.
+---
+<div class="vine-frame">
+  <svg class="vine vine--tl" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M6 6C42 12 30 52 62 62C94 72 82 22 132 32"
+      fill="none"
+      stroke="var(--color-green)"
+      stroke-width="2"
+      stroke-linecap="round"
+      opacity="0.5"
+    />
+    <circle cx="62" cy="62" r="4" fill="var(--color-gold)" opacity="0.55" />
+    <circle cx="30" cy="52" r="3" fill="var(--color-rose)" opacity="0.5" />
+    <circle cx="94" cy="72" r="3.5" fill="var(--color-blue)" opacity="0.45" />
+  </svg>
+  <svg class="vine vine--tr" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M6 6C42 12 30 52 62 62C94 72 82 22 132 32"
+      fill="none"
+      stroke="var(--color-green)"
+      stroke-width="2"
+      stroke-linecap="round"
+      opacity="0.5"
+    />
+    <circle cx="62" cy="62" r="4" fill="var(--color-gold)" opacity="0.55" />
+    <circle cx="30" cy="52" r="3" fill="var(--color-rose)" opacity="0.5" />
+    <circle cx="94" cy="72" r="3.5" fill="var(--color-blue)" opacity="0.45" />
+  </svg>
+  <svg class="vine vine--bl" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M6 6C42 12 30 52 62 62C94 72 82 22 132 32"
+      fill="none"
+      stroke="var(--color-green)"
+      stroke-width="2"
+      stroke-linecap="round"
+      opacity="0.5"
+    />
+    <circle cx="62" cy="62" r="4" fill="var(--color-gold)" opacity="0.55" />
+    <circle cx="30" cy="52" r="3" fill="var(--color-rose)" opacity="0.5" />
+    <circle cx="94" cy="72" r="3.5" fill="var(--color-blue)" opacity="0.45" />
+  </svg>
+  <svg class="vine vine--br" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M6 6C42 12 30 52 62 62C94 72 82 22 132 32"
+      fill="none"
+      stroke="var(--color-green)"
+      stroke-width="2"
+      stroke-linecap="round"
+      opacity="0.5"
+    />
+    <circle cx="62" cy="62" r="4" fill="var(--color-gold)" opacity="0.55" />
+    <circle cx="30" cy="52" r="3" fill="var(--color-rose)" opacity="0.5" />
+    <circle cx="94" cy="72" r="3.5" fill="var(--color-blue)" opacity="0.45" />
+  </svg>
+</div>
+
+<style>
+  .vine-frame {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .vine {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+  }
+
+  .vine--tl {
+    top: 0;
+    left: 0;
+  }
+  .vine--tr {
+    top: 0;
+    right: 0;
+    transform: scaleX(-1);
+  }
+  .vine--bl {
+    bottom: 0;
+    left: 0;
+    transform: scaleY(-1);
+  }
+  .vine--br {
+    bottom: 0;
+    right: 0;
+    transform: scale(-1, -1);
+  }
+
+  @media (max-width: 640px) {
+    .vine {
+      width: 80px;
+      height: 80px;
+    }
+  }
+</style>
