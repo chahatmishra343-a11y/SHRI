@@ -1,0 +1,145 @@
+:root {
+  /* Locked palette: warm parchment/blush, not a dark/cosmic theme. */
+  --color-parchment: #f8ecdf;
+  --color-parchment-deep: #f0dfc8;
+  --color-ink: #3a2a1e;
+  --color-ink-soft: #6b5744;
+  --color-gold: #b8842f;
+  --color-rose: #a8586b;
+  --color-green: #6d7a56;
+  --color-blue: #5f7787;
+
+  --font-body: 'Literata', Georgia, serif;
+  --font-sanskrit: 'Tiro Devanagari Sanskrit', 'Noto Serif Devanagari', serif;
+
+  --measure: 62ch;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--color-parchment);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-rose);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* --- Library page --- */
+
+.library {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.library h1 {
+  font-family: var(--font-sanskrit);
+  font-size: 2.75rem;
+  font-weight: 400;
+  color: var(--color-ink);
+  margin: 0 0 0.5rem;
+}
+
+.library .tagline {
+  color: var(--color-ink-soft);
+  font-style: italic;
+  margin: 0 0 2.5rem;
+}
+
+.chapter-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-parchment-deep);
+}
+
+.chapter-list li {
+  border-bottom: 1px solid var(--color-parchment-deep);
+}
+
+.chapter-list a {
+  display: block;
+  padding: 1rem 0;
+  color: var(--color-ink);
+  font-size: 1.1rem;
+}
+
+.chapter-list a:hover {
+  color: var(--color-rose);
+}
+
+/* --- Verse reader --- */
+
+.verse-reader {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 4rem 1.5rem 3rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.verse-location {
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--color-ink-soft);
+  margin: 0 0 2.5rem;
+}
+
+.sanskrit {
+  font-family: var(--font-sanskrit);
+  font-size: 1.6rem;
+  line-height: 1.9;
+  color: var(--color-ink);
+  margin: 0 0 1.75rem;
+}
+
+.translation {
+  font-size: 1.15rem;
+  color: var(--color-ink);
+  margin: 0 0 1.5rem;
+}
+
+.source {
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+  margin: 0 0 3rem;
+}
+
+.verse-nav {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-parchment-deep);
+  font-size: 0.95rem;
+}
